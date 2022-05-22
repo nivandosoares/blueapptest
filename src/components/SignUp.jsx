@@ -21,7 +21,6 @@ const SignUp = () => {
         try {
           let res = await fetch("http://localhost:4000/user/cadaster", {
             method: "POST",
-            headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
               name: name,
               password: password
@@ -31,8 +30,9 @@ const SignUp = () => {
           if (res.status === 200) {
             setName("");
             setPassword("");
-        } else {
-          alert('Erro durante o processamento de dados, por favor tente novamente')
+            alert("new user created!");
+          } else {
+            alert(res.why);
           }
         } catch (err) {
           console.log(err);
@@ -48,11 +48,11 @@ const SignUp = () => {
       }}
     >
       {(formik) => {
-        const { errors, touched, isValid, dirty } = formik;
+        const { errors, touched} = formik;
         return (
           <div className="container">
             <h1>Crie sua conta</h1>
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <label htmlFor="name">Username</label>
                 <Field

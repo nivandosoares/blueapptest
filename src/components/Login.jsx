@@ -33,14 +33,13 @@ const Login = () => {
             })
             
           });
-    //Observação: a API retorna o status -200- OK em todas as requisições, 
-    //eu sou noob demais demais pra contestar com argumentos bem fundamentados mas não curti muito
-          if (res.status === 200) {
+        if (res.status === 200) {
             setName("");
             setPassword("");
-            console.log(res);
+          console.log(res);
+          alert('logged!');
         } else {
-          alert('User not found in database')
+          alert(res.why);
         }
         } catch (err) {
           console.log(err);

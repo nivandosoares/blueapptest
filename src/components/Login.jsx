@@ -5,6 +5,8 @@ import { useState} from "react";
 import { Link } from "react-router-dom";
 import "./Form.scss";
 
+
+//Craindo o Schema de validação do Yup
 const signInSchema = Yup.object().shape({
   email: Yup.string().required("Este campo não pode ficar vazio"),
   password: Yup.string()
@@ -12,10 +14,13 @@ const signInSchema = Yup.object().shape({
     .min(6, "Senha muito curta, deve ter ao menos 6 caracteres")
 });
 const initialValues = { name: "", password: "" };
+
+//Iniciando o React Component
 const Login = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
   
+  //Requisição POST pós conclusão do formulário
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -28,20 +33,22 @@ const Login = () => {
             })
             
           });
-    
+    //Observação: a API retorna o status -200- OK em todas as requisições, 
+    //eu sou noob demais demais pra contestar com argumentos bem fundamentados mas não curti muito
           if (res.status === 200) {
             setName("");
             setPassword("");
             console.log(res);
         } else {
           alert('User not found in database')
-          }
+        }
         } catch (err) {
           console.log(err);
         }
     };
     
   return (
+    //Formulário com Formik pra criar as regras de preenchimento 
     <Formik
       initialValues={initialValues}
       validationSchema={signInSchema}

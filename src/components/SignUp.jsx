@@ -1,8 +1,7 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./Form.scss";
 
 const signInSchema = Yup.object().shape({
@@ -11,6 +10,8 @@ const signInSchema = Yup.object().shape({
     .required("Este campo não pode ficar vazio")
     .min(6, "Senha muito curta, deve ter ao menos 6 caracteres")
 });
+
+//Documentação mais completa no componente Login.jsx
 const initialValues = { name: "", password: "" };
 const SignUp = () => {
     const [name, setName] = useState("");

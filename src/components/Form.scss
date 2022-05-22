@@ -1,4 +1,4 @@
-$primary-color: #1d3557;
+$primary-color: #18ad38;
 $error-color: #e63946;
 $bg-color: #f1faee;
 $text-color: #293241;
@@ -6,7 +6,10 @@ $color-white: #fff;
 $color-green: #8fffab;
 
 $border-radius: 4px;
-
+body{
+    display: block;
+    align-items: center;
+}
 .container {
   margin-top: 5rem;
   padding: 3rem;
@@ -37,7 +40,7 @@ $border-radius: 4px;
     font-weight: 600;
   }
 
-  h1,p {
+  h1{
     font-size: 2rem;
     color: $text-color;
     margin-bottom: 2rem;
@@ -48,7 +51,7 @@ $border-radius: 4px;
     color: $text-color;
   }
 
-  label {
+  label,p {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
@@ -56,6 +59,7 @@ $border-radius: 4px;
   input {
     border: 2px solid rgba($primary-color, 0.8);
     border-radius: $border-radius;
+    width: 60%;
     padding: 0.5rem 1rem;
     padding-left: 1rem;
     font-size: 1rem;

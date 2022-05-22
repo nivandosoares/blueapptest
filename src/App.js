@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/Form.scss";
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";

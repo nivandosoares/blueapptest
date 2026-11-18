@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+Projeto React desenvolvido para um processo seletivo, com testes do componente de entrada.
+
+**Arquivos principais**
+
+- [src/App.js](<src/App.js>)
+- [src/App.test.js](<src/App.test.js>)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
